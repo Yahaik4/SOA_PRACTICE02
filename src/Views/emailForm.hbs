@@ -1,0 +1,24 @@
+<h2 class="mb-4">Gửi Email</h2>
+<form method="POST" action="/sendContent">
+  <div class="mb-3">
+    <label class="form-label">Người nhận (Email)</label>
+    <input type="email" name="to" class="form-control" placeholder="example@gmail.com" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Chủ đề</label>
+    <input type="text" name="subject" class="form-control" placeholder="Nhập subject" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Nội dung</label>
+    <textarea name="message" rows="5" class="form-control" placeholder="Nhập nội dung" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Gửi</button>
+  <button formaction="/sendServiceHTML" type="submit" class="btn btn-primary">Gửi kèm dịch vụ</button>
+</form>
+
+{{#if success}}
+  <script>alert("Send mail Success");</script>
+{{/if}}
